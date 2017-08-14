@@ -24,5 +24,7 @@ var shop1 = {
     }
     return this.hourlySales;
   }
-
 };
+
+var el = document.getElementById('example');
+el.innerHTML = 'This is working';
