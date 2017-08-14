@@ -18,13 +18,25 @@ var shop1 = {
   },
 
   calculateSales : function(){
+    var hour = 6;
+    var time = 'AM';
     for(var i = 0; i < 15; i++){
-      var temp = this.cookiesPurchased();
+      var temp = Math.round(this.cookiesPurchased());
       this.hourlySales[i] = temp;
+      if(hour > 11){
+        time = 'PM';
+      }
+      if(hour > 12){
+        hour = 1;
+      }
+      var el = document.getElementById('pike');
+      var listTag = document.createElement('li');
+      listTag.innerHTML = hour + time + ': ' + temp + ' cookies';
+      el.appendChild(listTag);
+      hour ++;
     }
     return this.hourlySales;
   }
 };
 
-var el = document.getElementById('example');
-el.innerHTML = 'This is working';
+shop1.calculateSales();
