@@ -1,3 +1,19 @@
 *{
+  font-family: times;
+  color: black;
+  background-color: pink;
+}
+
+.highlight{
   font-family: 'Bree Serif', serif;
+  color: blue;
+}
+
+.data{
+  font-family: Arial;
+  color: green;
+}
+h1{
+  font-size: 50px;
+  text-align: center;
 }
