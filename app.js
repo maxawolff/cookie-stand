@@ -62,8 +62,33 @@ var seatacShop = new Shop('SeaTac Airport', 3, 24, 1.2);
 var seattleCenterShop = new Shop('Seattle Center', 11, 38, 3.7);
 var capitolShop = new Shop('Capitol Hill', 20, 38, 2.3);
 var alkiShop = new Shop('Alki', 2, 16, 4.6);
+var shops = [pikeShop, seatacShop, seattleCenterShop, capitolShop, alkiShop];
 pikeShop.calculateSales();
 seatacShop.calculateSales();
 seattleCenterShop.calculateSales();
 capitolShop.calculateSales();
 alkiShop.calculateSales();
+
+var tr = document.createElement('tr');
+tableStart.appendChild(tr);
+
+var td = document.createElement('td');
+td.innerText = 'totals';
+tableStart.appendChild(td);
+
+for(var i = 0; i < storeHours.length; i ++){
+  var hourlyTotal = 0;
+  for(var j = 0; j < shops.length; j ++){
+    hourlyTotal += shops[j].hourlySales[i];
+  }
+  var td = document.createElement('td');
+  td.innerText = hourlyTotal;
+  tableStart.appendChild(td);
+}
+var finalTotal = 0;
+for(var i = 0; i < shops.length; i ++){
+  finalTotal += shops[i].totalSales;
+}
+var td = document.createElement('td');
+td.innerText = finalTotal;
+tableStart.appendChild(td);
