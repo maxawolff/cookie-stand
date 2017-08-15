@@ -1,4 +1,4 @@
-*{
+/**{
   font-family: times;
   color: black;
   background-color: pink;
@@ -16,4 +16,7 @@
 h1{
   font-size: 50px;
   text-align: center;
+}*/
+td{
+  border: thin solid red;
 }
