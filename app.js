@@ -101,10 +101,10 @@ var submit = document.getElementById('submit');
 function harvestAndPost(event){
   event.preventDefault();
   var newShop = new Shop();
-  newShop.name = this.event['address'].value;
-  newShop.minCustomers = this.event['minCust'].value;
-  newShop.maxCustomers = this.event['maxCust'].value;
-  newShop.cookiesPerSale = this.event['avgCook'].value;
+  newShop.name = this.elements['address'].value;
+  newShop.minCustomers = this.elements['minCust'].value;
+  newShop.maxCustomers = this.elements['maxCust'].value;
+  newShop.cookiesPerSale = this.elements['avgCook'].value;
   newShop.render();
 }
 form.addEventListener('submit', harvestAndPost);
