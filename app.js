@@ -106,6 +106,8 @@ function harvestAndPost(event){
   newShop.maxCustomers = this.elements['maxCust'].value;
   newShop.cookiesPerSale = this.elements['avgCook'].value;
   newShop.render();
+  shops.push(newShop);
+  makeFoot();
 }
 form.addEventListener('submit', harvestAndPost);
 makeFoot();
