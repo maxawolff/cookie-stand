@@ -20,3 +20,9 @@ h1{
 td{
   border: thin solid red;
 }
+
+/* table rows don't contain my table data, so table data doesn't change color. I need to make some kind of function (like math function) to model selecting the even or odd rows but that seems like a bunch of work and I'm lazy. I can change the table data to look weird if you'd like.
+*/
+tr:nth-child(even){
+  background-color: #DDD;
+}
