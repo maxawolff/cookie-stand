@@ -95,4 +95,17 @@ seatacShop.render();
 seattleCenterShop.render();
 capitolShop.render();
 alkiShop.render();
+
+var form = document.getElementById('theForm');
+var submit = document.getElementById('submit');
+function harvestAndPost(event){
+  event.preventDefault();
+  var newShop = new Shop();
+  newShop.name = this.event['address'].value;
+  newShop.minCustomers = this.event['minCust'].value;
+  newShop.maxCustomers = this.event['maxCust'].value;
+  newShop.cookiesPerSale = this.event['avgCook'].value;
+  newShop.render();
+}
+form.addEventListener('submit', harvestAndPost);
 makeFoot();
