@@ -47,7 +47,7 @@ function Shop(name, minCustomers, maxCustomers, cookiesPerSale){
     return this.cookiesSold;
   };
 
-  this.calculateSales = function(){
+  this.render = function(){
     addTableRow();
     addTableData(this.name);
 
@@ -90,9 +90,9 @@ var shops = [pikeShop, seatacShop, seattleCenterShop, capitolShop, alkiShop];
 
 //calls functions to actually run code!
 makeHeader();
-pikeShop.calculateSales();
-seatacShop.calculateSales();
-seattleCenterShop.calculateSales();
-capitolShop.calculateSales();
-alkiShop.calculateSales();
+pikeShop.render();
+seatacShop.render();
+seattleCenterShop.render();
+capitolShop.render();
+alkiShop.render();
 makeFoot();
