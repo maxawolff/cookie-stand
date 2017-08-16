@@ -6,11 +6,15 @@ var tableStart = document.getElementById('sales');
 var tab = document.createElement('table');
 tableStart.appendChild(tab);
 
-//function to make the header rom of the table
-var makeHeader = function(){
+// added a function to create a table row since I saw this code being repeated multiple times
+var addTableRow = function(){
   var tr = document.createElement('tr');
   tableStart.appendChild(tr);
+};
 
+//function to make the header rom of the table
+var makeHeader = function(){
+  addTableRow();
   for(var i = 0; i < rowOne.length; i ++){
     var td = document.createElement('td');
     td.innerText = rowOne[i];
@@ -39,9 +43,7 @@ function Shop(name, minCustomers, maxCustomers, cookiesPerSale){
   };
 
   this.calculateSales = function(){
-    var tr = document.createElement('tr');
-    tableStart.appendChild(tr);
-
+    addTableRow();
     var td = document.createElement('td');
     td.innerText = this.name;
     tableStart.appendChild(td);
@@ -62,9 +64,7 @@ function Shop(name, minCustomers, maxCustomers, cookiesPerSale){
 
 //function to make the footer row for the table
 var makeFoot = function(){
-  var tr = document.createElement('tr');
-  tableStart.appendChild(tr);
-
+  addTableRow();
   var td = document.createElement('td');
   td.innerText = 'totals';
   tableStart.appendChild(td);
@@ -86,12 +86,16 @@ var makeFoot = function(){
   td.innerText = finalTotal;
   tableStart.appendChild(td);
 };
+
+// create all of the shop objects
 var pikeShop = new Shop('1st and Pike', 23, 65, 6.3);
 var seatacShop = new Shop('SeaTac Airport', 3, 24, 1.2);
 var seattleCenterShop = new Shop('Seattle Center', 11, 38, 3.7);
 var capitolShop = new Shop('Capitol Hill', 20, 38, 2.3);
 var alkiShop = new Shop('Alki', 2, 16, 4.6);
 var shops = [pikeShop, seatacShop, seattleCenterShop, capitolShop, alkiShop];
+
+//calls functions to actually run code!
 makeHeader();
 pikeShop.calculateSales();
 seatacShop.calculateSales();
