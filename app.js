@@ -12,13 +12,18 @@ var addTableRow = function(){
   tableStart.appendChild(tr);
 };
 
+// added a function to create table data for the same reason as above.
+var addTableData = function(data){
+  var td = document.createElement('td');
+  td.innerText = data;
+  tableStart.appendChild(td);
+};
+
 //function to make the header rom of the table
 var makeHeader = function(){
   addTableRow();
   for(var i = 0; i < rowOne.length; i ++){
-    var td = document.createElement('td');
-    td.innerText = rowOne[i];
-    tableStart.appendChild(td);
+    addTableData(rowOne[i]);
   }
 };
 
@@ -44,47 +49,35 @@ function Shop(name, minCustomers, maxCustomers, cookiesPerSale){
 
   this.calculateSales = function(){
     addTableRow();
-    var td = document.createElement('td');
-    td.innerText = this.name;
-    tableStart.appendChild(td);
+    addTableData(this.name);
 
     for(var i = 0; i < storeHours.length; i ++){
       this.hourlySales[i] = Math.round(this.cookiesPurchased());
-      var td = document.createElement('td');
-      td.innerText = this.hourlySales[i];
-      tableStart.appendChild(td);
+      addTableData(this.hourlySales[i]);
       this.totalSales += this.hourlySales[i];
     }
 
-    var td = document.createElement('td');
-    td.innerText = this.totalSales;
-    tableStart.appendChild(td);
+    addTableData(this.totalSales);
   };
 }
 
 //function to make the footer row for the table
 var makeFoot = function(){
   addTableRow();
-  var td = document.createElement('td');
-  td.innerText = 'totals';
-  tableStart.appendChild(td);
+  addTableData('totals');
 
   for(var i = 0; i < storeHours.length; i ++){
     var hourlyTotal = 0;
     for(var j = 0; j < shops.length; j ++){
       hourlyTotal += shops[j].hourlySales[i];
     }
-    var td = document.createElement('td');
-    td.innerText = hourlyTotal;
-    tableStart.appendChild(td);
+    addTableData(hourlyTotal);
   }
   var finalTotal = 0;
   for(var i = 0; i < shops.length; i ++){
     finalTotal += shops[i].totalSales;
   }
-  var td = document.createElement('td');
-  td.innerText = finalTotal;
-  tableStart.appendChild(td);
+  addTableData(finalTotal);
 };
 
 // create all of the shop objects
