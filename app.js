@@ -13,9 +13,12 @@ var addTableRow = function(){
 };
 
 // added a function to create table data for the same reason as above.
-var addTableData = function(data){
+var addTableData = function(data, cName){
   var td = document.createElement('td');
   td.innerText = data;
+  if(cName !== ''){
+    td.className = cName;
+  }
   tableStart.appendChild(td);
 };
 
@@ -23,7 +26,7 @@ var addTableData = function(data){
 var makeHeader = function(){
   addTableRow();
   for(var i = 0; i < rowOne.length; i ++){
-    addTableData(rowOne[i]);
+    addTableData(rowOne[i],'');
   }
 };
 
@@ -49,45 +52,35 @@ function Shop(name, minCustomers, maxCustomers, cookiesPerSale){
 
   this.render = function(){
     addTableRow();
-    addTableData(this.name);
+    addTableData(this.name,'');
 
     for(var i = 0; i < storeHours.length; i ++){
       this.hourlySales[i] = Math.round(this.cookiesPurchased());
-      addTableData(this.hourlySales[i]);
+      addTableData(this.hourlySales[i],'');
       this.totalSales += this.hourlySales[i];
     }
 
-    addTableData(this.totalSales);
+    addTableData(this.totalSales,'');
   };
 }
 
 //function to make the footer row for the table
 var makeFoot = function(){
   addTableRow();
-  var td = document.createElement('td');
-  td.innerText = 'Totals';
-  td.className = 'footer';
-  tableStart.appendChild(td);
+  addTableData('totals','footer');
 
   for(var i = 0; i < storeHours.length; i ++){
     var hourlyTotal = 0;
     for(var j = 0; j < shops.length; j ++){
       hourlyTotal += shops[j].hourlySales[i];
     }
-    var td = document.createElement('td');
-    td.innerText = hourlyTotal;
-    td.className = 'footer';
-    tableStart.appendChild(td);
+    addTableData(hourlyTotal,'footer');
   }
   var finalTotal = 0;
   for(var i = 0; i < shops.length; i ++){
     finalTotal += shops[i].totalSales;
   }
-
-  var td = document.createElement('td');
-  td.innerText = finalTotal;
-  td.className = 'footer';
-  tableStart.appendChild(td);
+  addTableData(finalTotal,'footer');
 };
 
 // create all of the shop objects
@@ -120,10 +113,7 @@ function harvestAndPost(event){
   shops.push(newShop);
   for(var i = 15; i >= 0; i --){
     var allFooters = document.getElementsByClassName('footer');
-    console.log(rowOne.length);
-    console.log(allFooters.length);
     var oneFooter = allFooters[i];
-    console.log(oneFooter);
     var container = oneFooter.parentNode;
     container.removeChild(oneFooter);
   }
