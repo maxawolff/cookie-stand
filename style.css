@@ -2,6 +2,7 @@
   font-family: times;
   color: black;
   background-color: salmon;
+  text-align: center;
 }
 
 .highlight{
@@ -28,15 +29,38 @@ td{
 }
 
 .pic1{
-  margin-left: 32%;
   margin-bottom: 20px;
 }
 
 .top{
   border: 5px solid white;
   margin: 10px;
+  margin-bottom: 0px;
 }
 
+.locations{
+  width: 50%;
+  float: left;
+  font-size: 24px;
+}
+
+.sec2{
+  border: 5px solid white;
+  margin: 10px;
+  margin-top: 0px;
+  height: 300px;
+}
+
+.label{
+  text-align: center;
+  background-color: white;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.pic2{
+  margin-right: 120px
+}
 /* table rows don't contain my table data, so table data doesn't change color. I need to make some kind of function (like math function) to model selecting the even or odd rows but that seems like a bunch of work and I'm lazy. I can change the table data to look weird if you'd like.
 
 tr:nth-child(even){
