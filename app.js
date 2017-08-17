@@ -64,20 +64,30 @@ function Shop(name, minCustomers, maxCustomers, cookiesPerSale){
 //function to make the footer row for the table
 var makeFoot = function(){
   addTableRow();
-  addTableData('totals');
+  var td = document.createElement('td');
+  td.innerText = 'Totals';
+  td.className = 'footer';
+  tableStart.appendChild(td);
 
   for(var i = 0; i < storeHours.length; i ++){
     var hourlyTotal = 0;
     for(var j = 0; j < shops.length; j ++){
       hourlyTotal += shops[j].hourlySales[i];
     }
-    addTableData(hourlyTotal);
+    var td = document.createElement('td');
+    td.innerText = hourlyTotal;
+    td.className = 'footer';
+    tableStart.appendChild(td);
   }
   var finalTotal = 0;
   for(var i = 0; i < shops.length; i ++){
     finalTotal += shops[i].totalSales;
   }
-  addTableData(finalTotal);
+
+  var td = document.createElement('td');
+  td.innerText = finalTotal;
+  td.className = 'footer';
+  tableStart.appendChild(td);
 };
 
 // create all of the shop objects
@@ -98,6 +108,7 @@ alkiShop.render();
 
 var form = document.getElementById('theForm');
 var submit = document.getElementById('submit');
+
 function harvestAndPost(event){
   event.preventDefault();
   var newShop = new Shop();
@@ -107,7 +118,17 @@ function harvestAndPost(event){
   newShop.cookiesPerSale = this.elements['avgCook'].value;
   newShop.render();
   shops.push(newShop);
+  for(var i = 15; i >= 0; i --){
+    var allFooters = document.getElementsByClassName('footer');
+    console.log(rowOne.length);
+    console.log(allFooters.length);
+    var oneFooter = allFooters[i];
+    console.log(oneFooter);
+    var container = oneFooter.parentNode;
+    container.removeChild(oneFooter);
+  }
   makeFoot();
 }
+
 form.addEventListener('submit', harvestAndPost);
 makeFoot();
