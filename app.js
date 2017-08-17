@@ -100,7 +100,7 @@ capitolShop.render();
 alkiShop.render();
 
 var form = document.getElementById('theForm');
-var submit = document.getElementById('submit');
+// var submit = document.getElementById('submit');
 
 function harvestAndPost(event){
   event.preventDefault();
