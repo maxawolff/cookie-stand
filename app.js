@@ -106,9 +106,9 @@ function harvestAndPost(event){
   event.preventDefault();
   var newShop = new Shop();
   newShop.name = this.elements['address'].value;
-  newShop.minCustomers = this.elements['minCust'].value;
-  newShop.maxCustomers = this.elements['maxCust'].value;
-  newShop.cookiesPerSale = this.elements['avgCook'].value;
+  newShop.minCustomers = parseInt(this.elements['minCust'].value);
+  newShop.maxCustomers = parseInt(this.elements['maxCust'].value);
+  newShop.cookiesPerSale = parseFloat(this.elements['avgCook'].value);
   newShop.render();
   shops.push(newShop);
   for(var i = 15; i >= 0; i --){
