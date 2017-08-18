@@ -24,10 +24,6 @@ h1{
   margin-right: 20%;
 }
 
-td{
-  border: thin solid red;
-}
-
 .pic1{
   margin-bottom: 20px;
 }
@@ -48,10 +44,12 @@ td{
   border: 5px solid white;
   margin: 10px;
   margin-top: 0px;
+  margin-bottom: 0px;
   height: 300px;
+  padding-top: 30px;
 }
 
-.label{
+h2{
   text-align: center;
   background-color: white;
   margin-left: 20%;
@@ -61,6 +59,48 @@ td{
 .pic2{
   margin-right: 120px
 }
+
+.sec3{
+  border: 5px solid white;
+  margin: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 350px;
+  padding-top: 30px;
+}
+
+.pic3{
+  margin-top:
+}
+
+.sec4{
+  border: 5px solid white;
+  margin: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 300px;
+  padding-top: 30px;
+}
+
+td{
+  background-color: white;
+    border: thin solid black;
+}
+
+form{
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+label{
+  background-color: white;
+}
+
+#submit{
+  background-color: salmon;
+  color: black;
+}
+
 /* table rows don't contain my table data, so table data doesn't change color. I need to make some kind of function (like math function) to model selecting the even or odd rows but that seems like a bunch of work and I'm lazy. I can change the table data to look weird if you'd like.
 
 tr:nth-child(even){
