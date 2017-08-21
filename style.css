@@ -1,0 +1,101 @@
+*{
+  font-family: times;
+  color: black;
+  background-color: salmon;
+  text-align: center;
+}
+
+.highlight{
+  font-family: 'Bree Serif', serif;
+  color: blue;
+}
+
+h1{
+  font-size: 50px;
+  text-align: center;
+  background-color: white;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.pic1{
+  margin-bottom: 20px;
+}
+
+.top{
+  border: 5px solid white;
+  margin: 10px;
+  margin-bottom: 0px;
+}
+
+.locations{
+  width: 50%;
+  float: left;
+  font-size: 24px;
+}
+
+.sec2{
+  border: 5px solid white;
+  margin: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 300px;
+  padding-top: 30px;
+}
+
+h2{
+  text-align: center;
+  background-color: white;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.pic2{
+  margin-right: 120px
+}
+
+.sec3{
+  border: 5px solid white;
+  margin: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 350px;
+  padding-top: 30px;
+}
+
+.pic3{
+  margin-top:
+}
+
+.sec4{
+  border: 5px solid white;
+  margin: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 300px;
+  padding-top: 30px;
+}
+
+td{
+  background-color: white;
+    border: thin solid black;
+}
+
+form{
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+label{
+  background-color: white;
+}
+
+#submit{
+  background-color: salmon;
+  color: black;
+}
+
+.data{
+  font-family: Arial;
+  color: green;
+}

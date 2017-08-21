@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <link href='style.css' type='text/css' rel='stylesheet' />
+   <title>Salmon Cookie Sales</title>
+ </head>
+   <h1>Cookies Needed By Location Each Day</h1>
+  <section id="sales">
+  </section>
+    <h2>Add other stores here!</h2>
+
+    <form id='theForm'>
+      <table class = 'data'>
+        <tr>
+          <td><label for = "address"> Location of new strore </label></td>
+          <td><input type="text" name="address"/></td>
+        </tr>
+        <tr>
+          <td><label for = "minCust"> Minimum amount of customers per hour </label></td>
+          <td><input type="number" name="minCust"/></td>
+        </tr>
+        <tr>
+          <td><label for = "maxCust"> Maximum amount of customers per hour </label></td>
+          <td><input type="number" name="maxCust"/></td>
+        </tr>
+        <tr>
+          <td><label for = "avgCook"> Average amount of cookies sold </label></td>
+          <td><input type="number" name="avgCook" step="0.1"/></td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Add New Store" id="submit"></td>
+        </tr>
+      </table>
+    </form>
+ </body>
+   <script src="app.js" type="text/javascript"></script>
+</html>
